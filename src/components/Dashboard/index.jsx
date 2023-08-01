@@ -12,7 +12,7 @@ const Dashboard = () => {
     useEffect(() => {
         getIncomes();
         getExpenses()
-    }, []
+    }, [getExpenses, getIncomes]
     )
 
     return (

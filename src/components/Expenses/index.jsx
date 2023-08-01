@@ -10,9 +10,8 @@ import ExpenseForm from './ExpenseForm'
 
 
 const Expenses = () => {
-    const [total, setTotal] = useState(0)
 
-    const { addExpense, getExpenses, expenses, deleteExpense, totalExpenseVal, } = useGlobalContext()
+    const { getExpenses, expenses, deleteExpense, totalExpenseVal } = useGlobalContext()
     console.log("get Expense", expenses)
 
 
@@ -20,7 +19,7 @@ const Expenses = () => {
         getExpenses();
         // const total = totalIncome()
         // setTotal(total)
-    }, []
+    }, [getExpenses]
     )
 
 

@@ -18,7 +18,7 @@ export const GlobalProvider = ({children}) =>{
     totalIncome()
     totalExpense()
     totalBalance()
-   }, [incomes,expenses])
+   }, [incomes, expenses, totalIncome, totalExpense, totalBalance])
    
     const addIncome = async (income) => {
         const response = await axios.post(`${BASE_URL}add-income`, income)
