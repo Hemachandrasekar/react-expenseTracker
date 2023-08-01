@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { styled } from 'styled-components'
 import { InnerLayout } from '../../styles/layouts'
 import { useGlobalContext } from '../../context/globalContext'
@@ -8,17 +8,15 @@ import { rupee } from '../../utils/icon'
 
 
 const Income = () => {
-    const [total, setTotal] = useState(0)
 
-    const { addIncome, incomes, getIncomes, deleteIncome, totalIncomeVal } = useGlobalContext()
-    console.log("get incomes", incomes)
+    const { incomes, getIncomes, deleteIncome, totalIncomeVal } = useGlobalContext()
 
 
     useEffect(() => {
         getIncomes();
         // const total = totalIncome()
         // setTotal(total)
-    }, []
+    }, [getIncomes]
     )
 
     return (
