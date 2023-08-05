@@ -3,16 +3,19 @@ import { styled } from 'styled-components'
 import { InnerLayout } from '../../styles/layouts'
 import Chart from '../Chart'
 import { rupee } from '../../utils/icon'
-import { useGlobalContext } from '../../context/globalContext'
+import axios from 'axios'
+import { BASE_URL, useGlobalContext } from '../../context/globalContext'
 import History from '../History'
 
 
+
 const Dashboard = () => {
-    const { totalIncomeVal, totalExpenseVal, totalBalanceVal, incomes, expenses, getIncomes, getExpenses } = useGlobalContext()
+    const { totalIncomeVal, totalExpenseVal, getIncomes, getExpenses, totalBalanceVal, incomes, expenses } = useGlobalContext()
+
     useEffect(() => {
         getIncomes();
-        getExpenses()
-    }, [getExpenses, getIncomes]
+        getExpenses();
+    }, []
     )
 
     return (
